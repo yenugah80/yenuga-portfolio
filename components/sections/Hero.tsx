@@ -1,8 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, MapPin, Sparkles } from 'lucide-react'
+import { ArrowDown, MapPin, Sparkles, Zap, Code2 } from 'lucide-react'
 import { TextRotator } from '@/components/animations/TextRotator'
+import { MagneticElement } from '@/components/animations/MagneticElement'
 
 const roles = [
   'AI that understands context',
@@ -13,10 +14,34 @@ const roles = [
 ]
 
 const stats = [
-  { value: '8+', label: 'Years in the Trenches' },
-  { value: '3', label: 'Fortune 500s Transformed' },
-  { value: '50+', label: 'AI Systems Shipped' },
+  { value: '8+', label: 'Years in the Trenches', icon: Zap },
+  { value: '3', label: 'Fortune 500s Transformed', icon: Code2 },
+  { value: '50+', label: 'AI Systems Shipped', icon: Sparkles },
 ]
+
+// Animated ring component
+const AnimatedRing = ({ size, delay, duration }: { size: number; delay: number; duration: number }) => (
+  <motion.div
+    className="absolute left-1/2 top-1/2 rounded-full border border-primary/20"
+    style={{
+      width: size,
+      height: size,
+      marginLeft: -size / 2,
+      marginTop: -size / 2,
+    }}
+    animate={{
+      scale: [1, 1.2, 1],
+      opacity: [0.3, 0.1, 0.3],
+      rotate: [0, 180, 360],
+    }}
+    transition={{
+      duration,
+      delay,
+      repeat: Infinity,
+      ease: 'linear',
+    }}
+  />
+)
 
 export function Hero() {
   const scrollToAbout = () => {
@@ -26,10 +51,19 @@ export function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[128px]" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[128px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px]" />
+      {/* Animated rings */}
+      <div className="absolute inset-0 pointer-events-none">
+        <AnimatedRing size={400} delay={0} duration={20} />
+        <AnimatedRing size={600} delay={2} duration={25} />
+        <AnimatedRing size={800} delay={4} duration={30} />
+      </div>
+
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_hsl(var(--primary)/0.3)_0%,_transparent_50%)]" />
+        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--secondary)/0.2)_0%,_transparent_50%)]" />
+        <div className="absolute bottom-0 left-1/2 w-full h-full bg-[radial-gradient(ellipse_at_bottom,_hsl(var(--accent)/0.2)_0%,_transparent_50%)]" />
+      </div>
 
       <div className="container-custom mx-auto px-4 md:px-8 pt-20 md:pt-0 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -138,15 +172,22 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-8 md:gap-16"
+            className="flex flex-wrap items-center justify-center gap-6 md:gap-12"
           >
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
+              <MagneticElement key={index} strength={0.2}>
+                <motion.div
+                  className="text-center p-4 rounded-2xl glass group cursor-default"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <stat.icon className="w-5 h-5 mx-auto mb-2 text-primary group-hover:text-secondary transition-colors" />
+                  <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-muted-foreground whitespace-nowrap">{stat.label}</div>
+                </motion.div>
+              </MagneticElement>
             ))}
           </motion.div>
         </div>
