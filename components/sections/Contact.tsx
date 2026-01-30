@@ -16,28 +16,28 @@ const socialLinks = [
     icon: Linkedin,
     label: 'LinkedIn',
     href: 'https://linkedin.com/in/harika-ye',
-    description: "Let's connect professionally",
+    description: 'Where my professional story lives',
     color: 'primary',
   },
   {
     icon: Github,
     label: 'GitHub',
     href: 'https://github.com/yenugah80',
-    description: 'Check out my code',
+    description: 'See how I think through code',
     color: 'secondary',
   },
   {
     icon: BookOpen,
     label: 'Medium',
     href: 'https://harikayenuga.medium.com',
-    description: 'Read my articles',
+    description: 'Lessons I write to remember',
     color: 'accent',
   },
   {
     icon: Mail,
     label: 'Email',
     href: 'mailto:yenugaharika555@gmail.com',
-    description: 'Drop me a message',
+    description: 'The simplest way to reach me',
     color: 'primary',
   },
 ]
@@ -48,14 +48,15 @@ export function Contact() {
       <div className="container-custom mx-auto">
         <RevealOnScroll>
           <div className="text-center mb-16">
-            <span className="badge mb-4 inline-block">Let&apos;s Talk</span>
+            <span className="badge mb-4 inline-block">The Next Chapter</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Looking for an{' '}
-              <span className="gradient-text">AI Engineer</span>?
+              Let&apos;s Write the{' '}
+              <span className="gradient-text">Next Story</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I&apos;m actively exploring senior AI/ML roles where I can drive impact at scale.
-              If you&apos;re building something ambitious with LLMs, MLOps, or data platforms, let&apos;s connect.
+              I&apos;m looking for my next chapter: a team tackling hard problems with AI, where I can learn,
+              contribute, and help ship things that matter. If that sounds like what you&apos;re building,
+              I&apos;d love to hear your story.
             </p>
           </div>
         </RevealOnScroll>
@@ -67,11 +68,12 @@ export function Contact() {
               <MessageSquare className="w-10 h-10 text-primary" />
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Let&apos;s Ship Something Together
+              Every Great Thing Starts With a Conversation
             </h3>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-              Whether it&apos;s a full-time role, consulting engagement, or just a conversation
-              about AI, I respond to every message. Let&apos;s see what we can build.
+              Whether you are hiring, exploring a collaboration, or just want to talk about
+              the future of AI over coffee, I answer every message. The best opportunities
+              often come from unexpected conversations.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <motion.a
@@ -153,7 +155,7 @@ export function Contact() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
               </span>
               <span className="text-green-500 font-medium">
-                Currently open to new opportunities
+                Ready for my next chapter
               </span>
             </div>
           </div>

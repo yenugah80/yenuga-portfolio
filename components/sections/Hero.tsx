@@ -5,17 +5,17 @@ import { ArrowDown, MapPin, Sparkles, Zap, Code2, Brain, Database, Cloud, Cpu } 
 import { TextRotator } from '@/components/animations/TextRotator'
 
 const roles = [
-  'AI that understands context',
-  'Systems that scale gracefully',
-  'Models that explain themselves',
-  'Pipelines that never sleep',
-  'Intelligence that empowers teams',
+  'AI that tells a story with data',
+  'systems that grow with your ambition',
+  'models that earn trust through transparency',
+  'pipelines that work while you sleep',
+  'intelligence that amplifies human potential',
 ]
 
 const stats = [
-  { value: '8+', label: 'Years in the Trenches', icon: Zap },
-  { value: '3', label: 'Fortune 500s Transformed', icon: Code2 },
-  { value: '50+', label: 'AI Systems Shipped', icon: Sparkles },
+  { value: '8+', label: 'Years of Learning & Building', icon: Zap },
+  { value: '3', label: 'Fortune 500 Chapters', icon: Code2 },
+  { value: '50+', label: 'AI Stories Shipped', icon: Sparkles },
 ]
 
 // Floating tech icons around the hero
@@ -140,10 +140,10 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            From <span className="text-secondary font-medium">Apple</span> to{' '}
-            <span className="text-accent font-medium">Bank of America</span> to{' '}
-            <span className="text-primary font-medium">Macy&apos;s</span>, I turn ambitious AI visions
-            into production reality. Currently leading GenAI transformation at enterprise scale.
+            My journey started with a fascination for making machines learn. From building analytics at{' '}
+            <span className="text-secondary font-medium">Apple</span>, to protecting billions at{' '}
+            <span className="text-accent font-medium">Bank of America</span>, to now pioneering GenAI at{' '}
+            <span className="text-primary font-medium">Macy&apos;s</span>, every chapter taught me that the best AI tells a story humans can trust.
           </motion.p>
 
           {/* Location */}

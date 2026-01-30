@@ -16,7 +16,7 @@ import { RevealOnScroll } from '@/components/animations/RevealOnScroll'
 const skillCategories = [
   {
     icon: Brain,
-    title: 'LLM Engineering & GenAI',
+    title: 'Where I Live Now: GenAI',
     color: 'primary',
     skills: [
       'LangChain',
@@ -34,7 +34,7 @@ const skillCategories = [
   },
   {
     icon: Cpu,
-    title: 'Machine Learning',
+    title: 'The Foundation: ML',
     color: 'secondary',
     skills: [
       'PyTorch',
@@ -51,7 +51,7 @@ const skillCategories = [
   },
   {
     icon: Database,
-    title: 'Data Engineering',
+    title: 'Moving Data at Scale',
     color: 'accent',
     skills: [
       'Apache Spark',
@@ -68,7 +68,7 @@ const skillCategories = [
   },
   {
     icon: Cloud,
-    title: 'Cloud & Infrastructure',
+    title: 'Making It Run Anywhere',
     color: 'primary',
     skills: [
       'AWS (SageMaker, Bedrock, EMR)',
@@ -83,7 +83,7 @@ const skillCategories = [
   },
   {
     icon: Code,
-    title: 'Programming',
+    title: 'Languages I Dream In',
     color: 'secondary',
     skills: [
       'Python',
@@ -98,7 +98,7 @@ const skillCategories = [
   },
   {
     icon: BarChart3,
-    title: 'Visualization & BI',
+    title: 'Telling Stories with Data',
     color: 'accent',
     skills: [
       'Power BI',
@@ -111,7 +111,7 @@ const skillCategories = [
   },
   {
     icon: Boxes,
-    title: 'Databases',
+    title: 'Where Data Lives',
     color: 'primary',
     skills: [
       'PostgreSQL',
@@ -125,7 +125,7 @@ const skillCategories = [
   },
   {
     icon: Workflow,
-    title: 'Agentic AI Systems',
+    title: 'The Future: AI Agents',
     color: 'secondary',
     skills: [
       'Multi-Agent Workflows',
@@ -147,13 +147,13 @@ export function Skills() {
       <div className="container-custom mx-auto relative z-10">
         <RevealOnScroll>
           <div className="text-center mb-16">
-            <span className="badge-secondary mb-4 inline-block">Technical Stack</span>
+            <span className="badge-secondary mb-4 inline-block">Tools of the Trade</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Battle-Tested <span className="gradient-text">Stack</span>
+              Technologies I <span className="gradient-text">Think In</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Production-proven technologies across the ML lifecycle, from data ingestion
-              to model deployment, monitoring, and beyond.
+              Every tool here has a story. Some I learned through late-night debugging.
+              Others through production incidents. All of them shaped how I solve problems today.
             </p>
           </div>
         </RevealOnScroll>

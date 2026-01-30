@@ -7,21 +7,21 @@ import { RevealOnScroll } from '@/components/animations/RevealOnScroll'
 const values = [
   {
     icon: Brain,
-    title: 'End-to-End AI Delivery',
+    title: 'The Full Journey',
     description:
-      'From POC to production, I own the full ML lifecycle: data pipelines, model development, deployment, monitoring, and continuous improvement at scale.',
+      'I learned early that ideas without execution are just dreams. So I became the person who takes AI from whiteboard sketches to systems handling millions of requests. Every pipeline, every model, every deployment teaches me something new.',
   },
   {
     icon: Users,
-    title: 'Cross-Functional Leadership',
+    title: 'Building Bridges',
     description:
-      'Partnering with product, engineering, and stakeholders to align AI initiatives with business KPIs. Proven track record of driving adoption across enterprise teams.',
+      'The best AI solutions come from understanding people, not just data. I spend as much time listening to business leaders and end users as I do writing code. That&apos;s how technology becomes transformation.',
   },
   {
     icon: Rocket,
-    title: 'Ship Fast, Scale Smart',
+    title: 'Shipping is Learning',
     description:
-      'Building production-grade systems with MLOps best practices: CI/CD pipelines, A/B testing, model governance, and observability built-in from day one.',
+      'I believe in getting things into production quickly, then iterating relentlessly. Perfect is the enemy of shipped. MLOps, testing, monitoring... they&apos;re not overhead, they&apos;re how you learn what actually works.',
   },
 ]
 
@@ -36,15 +36,16 @@ export function About() {
           <div className="text-center mb-16">
             <span className="badge mb-4 inline-block">About Me</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              I <span className="gradient-text">Ship AI</span> That{' '}
-              <span className="gradient-text">Moves Business</span>
+              The <span className="gradient-text">Story</span> Behind{' '}
+              <span className="gradient-text">The Code</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              8+ years of hands-on experience building and deploying ML systems that drive measurable impact.
-              From fraud detection at <span className="text-secondary font-medium">Bank of America</span> to
-              retail analytics at <span className="text-accent font-medium">Apple</span> to GenAI platforms at{' '}
-              <span className="text-primary font-medium">Macy&apos;s</span>, I thrive at the intersection of
-              cutting-edge AI research and production engineering.
+              Eight years ago, I wrote my first machine learning model. It was messy, slow, and barely worked.
+              But watching data transform into insight sparked something. Since then, I&apos;ve chased that feeling
+              through <span className="text-accent font-medium">Apple&apos;s</span> retail floors,{' '}
+              <span className="text-secondary font-medium">Bank of America&apos;s</span> trading systems, and now{' '}
+              <span className="text-primary font-medium">Macy&apos;s</span> GenAI revolution. Each stop added a new
+              chapter to my understanding of what AI can become when it meets real problems.
             </p>
           </div>
         </RevealOnScroll>
@@ -82,8 +83,8 @@ export function About() {
                   <GraduationCap className="w-6 h-6 text-secondary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">Education</h3>
-                  <p className="text-sm text-muted-foreground">Academic Background</p>
+                  <h3 className="text-lg font-bold">Where I Learned</h3>
+                  <p className="text-sm text-muted-foreground">The foundation of my journey</p>
                 </div>
               </div>
               <div className="space-y-4">
@@ -109,8 +110,8 @@ export function About() {
                   <Award className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">Recognition</h3>
-                  <p className="text-sm text-muted-foreground">Achievements & Publications</p>
+                  <h3 className="text-lg font-bold">Moments That Mattered</h3>
+                  <p className="text-sm text-muted-foreground">Milestones along the way</p>
                 </div>
               </div>
               <div className="space-y-4">

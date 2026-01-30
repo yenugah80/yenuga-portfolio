@@ -82,13 +82,13 @@ const experiences = [
     subtitle: 'GenAI Platform & Applied ML Systems',
     period: 'Mar 2025 - Present',
     location: 'United States',
-    impact: 'Spearheading enterprise GenAI transformation across 500+ retail stores',
-    summary: 'Leading the design and delivery of production-grade generative AI systems that power intelligent retail operations. Architecting scalable LLM infrastructure from prototype to production, enabling store associates and business teams to leverage AI for decision-making at scale.',
+    impact: 'Writing the next chapter: bringing GenAI to 500+ retail stores',
+    summary: 'This is where everything comes together. After years of building ML systems, I finally get to lead a GenAI transformation from scratch. The challenge is not just technical but cultural: how do you help 500+ stores trust and adopt AI? Every day brings new questions, and I love that.',
     highlights: [
-      { text: 'Built enterprise LLM platform from scratch, designed RAG architecture with FAISS vector stores and Bedrock Knowledge Bases, achieving sub-2s query latency across millions of product documents', metric: 'Sub-2s Latency' },
-      { text: 'Architected multi-agent orchestration using LangGraph; autonomous agents handle task decomposition, SQL generation, tool selection, and self-correction, reducing manual analyst workflows by 60%', metric: '60% Time Saved' },
-      { text: 'Implemented responsible AI framework with guardrails, content filtering, and output validation, achieving 99.9% safe response rate while maintaining response quality and usefulness', metric: '99.9% Safe' },
-      { text: 'Established MLOps best practices: CI/CD pipelines, model versioning, A/B testing infrastructure, and real-time monitoring dashboards for continuous model improvement', metric: 'Production MLOps' },
+      { text: 'Started with a blank canvas. Built the entire LLM platform from zero, designing RAG architecture that now answers questions across millions of product documents in under 2 seconds', metric: 'Sub-2s Latency' },
+      { text: 'Created autonomous AI agents that actually think. They decompose problems, pick the right tools, write SQL, and correct their own mistakes. Watching analysts save 60% of their time never gets old', metric: '60% Time Saved' },
+      { text: 'Built trust through safety. Our guardrails ensure 99.9% of responses are safe, because in enterprise AI, one bad answer can undo months of adoption work', metric: '99.9% Safe' },
+      { text: 'Made deployment boring (in the best way). CI/CD, versioning, monitoring all working seamlessly so the team can focus on building, not firefighting', metric: 'Production MLOps' },
     ],
     technologies: ['LangChain', 'LangGraph', 'Amazon Bedrock', 'FAISS', 'Spark', 'Databricks', 'FastAPI', 'Python'],
     color: 'primary',
@@ -100,13 +100,13 @@ const experiences = [
     subtitle: 'ML Engineering & Financial Risk Systems',
     period: 'Feb 2022 - Jan 2024',
     location: 'United States',
-    impact: 'Delivered ML systems processing $2B+ daily transactions with enterprise-grade reliability',
-    summary: 'Owned the full ML lifecycle for mission-critical financial systems, from feature engineering to production deployment. Built fraud detection and risk scoring models that directly protected customer assets while driving GenAI adoption across the risk organization.',
+    impact: 'The chapter where stakes got real: protecting $2B+ in daily transactions',
+    summary: 'Banking taught me what it means when your code really matters. When your model flags a transaction as fraud, you are either saving someone their life savings or blocking a legitimate purchase. That pressure shaped how I think about every system I build now.',
     highlights: [
-      { text: 'Shipped fraud detection ensemble models (XGBoost + neural networks) that reduced false positive alerts by 35%, saving investigation teams 1,000+ hours monthly while catching 12% more true fraud', metric: '35% Fewer False Positives' },
-      { text: 'Engineered 200+ production features across Snowflake, BigQuery, and Databricks; built real-time and batch pipelines processing petabytes of transaction data with 99.9% uptime SLA', metric: 'PB-Scale Engineering' },
-      { text: 'Built end-to-end MLOps infrastructure: automated training pipelines, model versioning with MLflow, drift detection, and Grafana monitoring that reduced model deployment time from weeks to hours', metric: 'Hours Not Weeks' },
-      { text: 'Led 5-engineer team pioneering GenAI adoption for risk & compliance, built document summarization and regulatory Q&A systems using Azure OpenAI, now used by 200+ analysts daily', metric: '200+ Daily Users' },
+      { text: 'The fraud problem was personal. Built models that cut false alerts by 35% while catching more actual fraud. Behind those numbers are real people who kept their money or did not get wrongly blocked', metric: '35% Fewer False Positives' },
+      { text: 'Learned to think in petabytes. Built pipelines processing more data in a day than most companies see in a year. The scale was humbling and addictive', metric: 'PB-Scale Engineering' },
+      { text: 'Got obsessed with deployment speed. Reduced model releases from weeks to hours because in fraud detection, every day of delay means more money lost', metric: 'Hours Not Weeks' },
+      { text: 'Led the GenAI charge before it was cool. Built document AI systems that 200+ analysts now rely on daily. Seeing skeptics become believers is still the best feeling', metric: '200+ Daily Users' },
     ],
     technologies: ['Python', 'XGBoost', 'PyTorch', 'PySpark', 'Azure OpenAI', 'Snowflake', 'BigQuery', 'Docker', 'MLflow'],
     color: 'secondary',
@@ -118,13 +118,13 @@ const experiences = [
     subtitle: 'Retail Analytics & ML Systems (via Infosys)',
     period: 'Sep 2019 - Feb 2022',
     location: 'United States',
-    impact: 'Transformed retail analytics from reactive reporting to predictive ML-powered insights',
-    summary: 'Drove the evolution from traditional BI dashboards to production ML systems for Apple Retail. Led cross-functional teams to deliver forecasting models and automated pipelines that directly informed executive decision-making and inventory planning.',
+    impact: 'Where I learned what excellence looks like: Apple Retail analytics',
+    summary: 'Apple changed how I think about quality. Their bar for everything is impossibly high, and it is contagious. I came in to build dashboards and left knowing how to lead teams, ship ML systems, and demand excellence from myself.',
     highlights: [
-      { text: 'Owned end-to-end analytics platform powering executive dashboards; built data pipelines processing 50M+ daily retail transactions, enabling real-time visibility into global store performance', metric: '50M+ Daily Records' },
-      { text: 'Led migration from legacy BI to production ML, built demand forecasting models using Prophet and custom ensembles that improved inventory prediction accuracy by 25%, reducing stockouts', metric: '25% Better Forecasts' },
-      { text: 'Served as technical lead and mentor for 19-engineer team, established coding standards, code review processes, and knowledge sharing that improved team velocity by 40%', metric: '19 Engineers Mentored' },
-      { text: 'Recognized with 2x Spot Awards for exceptional delivery, shipped ahead of schedule while maintaining quality, earning trust to lead increasingly complex initiatives', metric: '2x Recognition Awards' },
+      { text: 'My dashboards reached executives. Built pipelines processing 50M+ daily transactions so leadership could see every store on the planet in real-time. No pressure, right?', metric: '50M+ Daily Records' },
+      { text: 'Convinced the team to go from reports to predictions. Those forecasting models cut stockouts by 25%. Somewhere, a customer got the iPhone they wanted because of math we wrote', metric: '25% Better Forecasts' },
+      { text: 'Discovered I love teaching. Mentored 19 engineers and watched them grow. Turns out the best way to learn is to help others learn', metric: '19 Engineers Mentored' },
+      { text: 'Two Spot Awards taught me something important: ship quality work ahead of schedule, and trust follows. Those awards opened doors to bigger challenges', metric: '2x Recognition Awards' },
     ],
     technologies: ['Python', 'SQL', 'Azure ML', 'SageMaker', 'Prophet', 'FastAPI', 'Docker', 'Kubernetes', 'Tableau'],
     color: 'accent',
@@ -136,12 +136,12 @@ const experiences = [
     subtitle: 'National Remote Sensing Centre (Govt. of India)',
     period: 'Jun 2017 - Aug 2019',
     location: 'Hyderabad, India',
-    impact: 'Built foundational geospatial data infrastructure for national Smart Cities initiative',
-    summary: 'Started my engineering journey building data systems for India\'s national satellite imagery program. Designed geodatabases and ETL pipelines that processed terabytes of remote sensing data, laying the groundwork for my passion in scalable data engineering.',
+    impact: 'Chapter one: where satellite images sparked a data obsession',
+    summary: 'Every journey starts somewhere. Mine started with satellite imagery from space and a lot of messy data. I did not know it then, but processing images of cities from orbit would teach me to love the puzzle of making sense of massive, complex data.',
     highlights: [
-      { text: 'Architected geodatabases for Smart Cities Mission, designed data models and spatial indexing strategies that enabled efficient querying of terabyte-scale satellite imagery', metric: 'TB-Scale Design' },
-      { text: 'Automated ETL pipelines for satellite data ingestion, reduced manual processing time by 70% through Python automation, enabling faster insights for urban planning teams', metric: '70% Faster Processing' },
-      { text: 'Improved data quality from 60% to 95% reliability, implemented validation rules, anomaly detection, and data cleansing workflows that became standard practice across the organization', metric: '95% Data Quality' },
+      { text: 'Built my first terabyte-scale system. Designing geodatabases for Smart Cities felt like science fiction. Watching urban planners use data I processed to improve real cities? Pure magic', metric: 'TB-Scale Design' },
+      { text: 'Discovered automation is my superpower. Cut manual processing by 70% and suddenly had time to learn, experiment, and dream bigger', metric: '70% Faster Processing' },
+      { text: 'Learned that garbage in means garbage out. Taking data quality from 60% to 95% taught me to obsess over the fundamentals. That lesson still guides everything I build', metric: '95% Data Quality' },
     ],
     technologies: ['ArcGIS', 'QGIS', 'Python', 'PostgreSQL', 'MySQL', 'SQL Server', 'ETL'],
     color: 'primary',
@@ -171,12 +171,12 @@ export function Experience() {
               Experience
             </motion.span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="gradient-text animate-gradient">8+ Years</span> of Building
+              <span className="gradient-text animate-gradient">Four Chapters</span>,
               <br />
-              <span className="text-foreground">Production AI Systems</span>
+              <span className="text-foreground">One Journey</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From retail giants to banking leaders, transforming data into intelligent systems
+              Every role taught me something different. Together, they shaped how I think about building AI that matters.
             </p>
           </div>
         </RevealOnScroll>
@@ -295,10 +295,10 @@ export function Experience() {
         <RevealOnScroll>
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { value: '8+', label: 'Years Experience', Icon: Clock },
-              { value: '3', label: 'Industries', Icon: Building2 },
-              { value: '50+', label: 'AI Projects', Icon: Bot },
-              { value: '2', label: 'Awards', Icon: Award },
+              { value: '8+', label: 'Years of Growing', Icon: Clock },
+              { value: '4', label: 'Chapters Written', Icon: Building2 },
+              { value: '50+', label: 'Stories Shipped', Icon: Bot },
+              { value: '2', label: 'Awards Earned', Icon: Award },
             ].map((stat, i) => (
               <motion.div
                 key={i}
