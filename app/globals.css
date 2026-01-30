@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -46,6 +47,13 @@ body {
   color: hsl(var(--foreground));
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transitions for all interactive elements */
+*, *::before, *::after {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 /* ============================================
@@ -76,24 +84,21 @@ body {
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
   }
-  25% {
-    transform: translateY(-10px) rotate(2deg);
-  }
-  75% {
-    transform: translateY(10px) rotate(-2deg);
+  50% {
+    transform: translateY(-12px);
   }
 }
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3),
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2),
                 0 0 40px hsl(var(--primary) / 0.1);
   }
   50% {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.5),
-                0 0 80px hsl(var(--primary) / 0.2);
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.35),
+                0 0 60px hsl(var(--primary) / 0.15);
   }
 }
 
@@ -145,46 +150,46 @@ body {
   50% { border-color: transparent }
 }
 
-/* Animation utilities */
+/* Animation utilities - Smooth & Gentle */
 .animate-gradient {
   background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
+  animation: gradient-shift 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .animate-gradient-xy {
   background-size: 400% 400%;
-  animation: gradient-xy 8s ease infinite;
+  animation: gradient-xy 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .animate-spin-slow {
-  animation: spin-slow 30s linear infinite;
+  animation: spin-slow 40s linear infinite;
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.08), transparent);
   background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+  animation: shimmer 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .animate-bounce-subtle {
-  animation: bounce-subtle 2s ease-in-out infinite;
+  animation: bounce-subtle 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .animate-wave {
-  animation: wave 1s ease-in-out infinite;
+  animation: wave 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   transform-origin: 70% 70%;
 }
 
 .animate-pulse-slow {
-  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .animation-delay-2000 {
@@ -278,7 +283,7 @@ body {
   background: hsl(var(--card) / 0.6);
   backdrop-filter: blur(12px);
   border: 1px solid hsl(var(--border) / 0.5);
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .glass:hover {
@@ -330,30 +335,32 @@ body {
    HOVER CARD EFFECTS
    ============================================ */
 .hover-card {
-  @apply transition-all duration-500 ease-out;
+  @apply transition-all duration-700;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .hover-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.25);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px -12px hsl(var(--primary) / 0.2);
 }
 
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.3);
+  box-shadow: 0 10px 35px -10px hsl(var(--primary) / 0.25);
 }
 
 /* ============================================
    BUTTONS
    ============================================ */
 .btn-primary {
-  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden;
+  @apply px-6 py-3 rounded-xl font-semibold relative overflow-hidden;
   background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
-  box-shadow: 0 4px 20px hsl(var(--primary) / 0.4);
+  box-shadow: 0 4px 20px hsl(var(--primary) / 0.3);
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .btn-primary::before {
@@ -363,8 +370,8 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .btn-primary:hover::before {
@@ -372,20 +379,21 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 30px hsl(var(--primary) / 0.5);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px hsl(var(--primary) / 0.4);
 }
 
 .btn-primary:active {
-  transform: translateY(-1px) scale(0.98);
+  transform: translateY(-1px) scale(0.99);
 }
 
 .btn-outline {
-  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 border-2;
+  @apply px-6 py-3 rounded-xl font-semibold border-2;
   border-color: hsl(var(--primary));
   color: hsl(var(--primary));
   position: relative;
   overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .btn-outline::before {
@@ -395,8 +403,8 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background: hsl(var(--primary) / 0.1);
-  transition: width 0.3s ease;
+  background: hsl(var(--primary) / 0.08);
+  transition: width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   z-index: -1;
 }
 
@@ -405,23 +413,24 @@ body {
 }
 
 .btn-outline:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px hsl(var(--primary) / 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px hsl(var(--primary) / 0.25);
 }
 
 /* ============================================
    BADGES
    ============================================ */
 .badge {
-  @apply px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-300;
+  @apply px-4 py-1.5 text-xs font-semibold rounded-full;
   background: hsl(var(--primary) / 0.15);
   color: hsl(var(--primary));
   border: 1px solid hsl(var(--primary) / 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .badge:hover {
-  background: hsl(var(--primary) / 0.25);
-  transform: scale(1.05);
+  background: hsl(var(--primary) / 0.22);
+  transform: scale(1.03);
 }
 
 .badge-secondary {
@@ -516,11 +525,11 @@ body {
    SKILL CARD ANIMATIONS
    ============================================ */
 .skill-card {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .skill-card:hover {
-  transform: translateY(-10px) rotateX(5deg);
+  transform: translateY(-6px) rotateX(3deg);
 }
 
 /* ============================================
