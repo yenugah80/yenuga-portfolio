@@ -5,15 +5,17 @@ import { Skills } from '@/components/sections/Skills'
 import { Projects } from '@/components/sections/Projects'
 import { Blog } from '@/components/sections/Blog'
 import { Contact } from '@/components/sections/Contact'
-import { ParticleField } from '@/components/animations/ParticleField'
+import { TechGrid } from '@/components/animations/TechGrid'
 import { FloatingShapes } from '@/components/animations/FloatingShapes'
 import { OrbField } from '@/components/animations/GlowingOrb'
+import { NeuralNetwork } from '@/components/animations/NeuralNetwork'
 
 export default function Home() {
   return (
     <>
-      {/* Creative Background Layers */}
-      <ParticleField />
+      {/* Modern Tech Background Layers */}
+      <TechGrid />
+      <NeuralNetwork />
       <OrbField />
       <FloatingShapes />
 
