@@ -48,9 +48,158 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* ============================================
+   ENERGETIC ANIMATIONS
+   ============================================ */
+
+/* Animated gradient background */
+@keyframes gradient-xy {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(-2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3),
+                0 0 40px hsl(var(--primary) / 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.5),
+                0 0 80px hsl(var(--primary) / 0.2);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* Animation utilities */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-gradient-xy {
+  background-size: 400% 400%;
+  animation: gradient-xy 8s ease infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -58,131 +207,221 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary) / 0.5);
-  border-radius: 4px;
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--secondary)));
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary) / 0.7);
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--accent)));
 }
 
 /* Selection */
 ::selection {
-  background: hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary) / 0.4);
   color: hsl(var(--foreground));
 }
 
-/* Gradient text utility */
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
 .gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.gradient-text-static {
   background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Glow effect utility */
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
 .glow {
-  box-shadow: 0 0 20px hsl(var(--primary) / 0.3),
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.4),
               0 0 40px hsl(var(--primary) / 0.2),
               0 0 60px hsl(var(--primary) / 0.1);
 }
 
+.glow-strong {
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.5),
+              0 0 60px hsl(var(--primary) / 0.3),
+              0 0 90px hsl(var(--primary) / 0.2);
+}
+
 .glow-text {
   text-shadow: 0 0 10px hsl(var(--primary) / 0.5),
-               0 0 20px hsl(var(--primary) / 0.3);
+               0 0 20px hsl(var(--primary) / 0.3),
+               0 0 40px hsl(var(--primary) / 0.2);
 }
 
-/* Card glass effect */
+.glow-secondary {
+  box-shadow: 0 0 20px hsl(var(--secondary) / 0.4),
+              0 0 40px hsl(var(--secondary) / 0.2);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px hsl(var(--accent) / 0.4),
+              0 0 40px hsl(var(--accent) / 0.2);
+}
+
+/* ============================================
+   GLASS MORPHISM
+   ============================================ */
 .glass {
   background: hsl(var(--card) / 0.6);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border: 1px solid hsl(var(--border) / 0.5);
+  transition: all 0.3s ease;
 }
 
-/* Animated gradient border */
+.glass:hover {
+  background: hsl(var(--card) / 0.8);
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+.glass-strong {
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--border) / 0.8);
+}
+
+/* ============================================
+   GRADIENT BORDERS
+   ============================================ */
 .gradient-border {
   position: relative;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
 }
 
 .gradient-border::before {
   content: '';
   position: absolute;
-  inset: -1px;
+  inset: -2px;
   border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+  padding: 2px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)), hsl(var(--primary)));
+  background-size: 300% 300%;
+  animation: gradient-xy 4s ease infinite;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
 
-/* Section spacing */
+/* ============================================
+   SECTION & CONTAINER
+   ============================================ */
 .section {
-  @apply py-20 md:py-32 px-4 md:px-8;
+  @apply py-24 md:py-36 px-4 md:px-8 relative;
 }
 
-/* Container */
 .container-custom {
   @apply max-w-7xl mx-auto;
 }
 
-/* Hover card effect */
+/* ============================================
+   HOVER CARD EFFECTS
+   ============================================ */
 .hover-card {
-  @apply transition-all duration-300;
+  @apply transition-all duration-500 ease-out;
 }
 
 .hover-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.2);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.25);
 }
 
-/* Button styles */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.3);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
 .btn-primary {
-  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden;
   background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
-  box-shadow: 0 4px 15px hsl(var(--primary) / 0.4);
+  box-shadow: 0 4px 20px hsl(var(--primary) / 0.4);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px hsl(var(--primary) / 0.5);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px hsl(var(--primary) / 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 .btn-outline {
-  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 border;
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 border-2;
   border-color: hsl(var(--primary));
   color: hsl(var(--primary));
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: hsl(var(--primary) / 0.1);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-outline:hover::before {
+  width: 100%;
 }
 
 .btn-outline:hover {
-  background: hsl(var(--primary) / 0.1);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px hsl(var(--primary) / 0.3);
 }
 
-/* Timeline styles */
-.timeline-line {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--secondary)));
-}
-
-.timeline-dot {
-  @apply w-4 h-4 rounded-full absolute -left-[7px];
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-  box-shadow: 0 0 0 4px hsl(var(--background)), 0 0 20px hsl(var(--primary) / 0.5);
-}
-
-/* Badge styles */
+/* ============================================
+   BADGES
+   ============================================ */
 .badge {
-  @apply px-3 py-1 text-xs font-medium rounded-full;
+  @apply px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-300;
   background: hsl(var(--primary) / 0.15);
   color: hsl(var(--primary));
   border: 1px solid hsl(var(--primary) / 0.3);
+}
+
+.badge:hover {
+  background: hsl(var(--primary) / 0.25);
+  transform: scale(1.05);
 }
 
 .badge-secondary {
@@ -197,7 +436,43 @@ body {
   border: 1px solid hsl(var(--accent) / 0.3);
 }
 
-/* Canvas background overlay */
+/* ============================================
+   TIMELINE
+   ============================================ */
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom,
+    hsl(var(--primary)),
+    hsl(var(--secondary)),
+    hsl(var(--accent)),
+    hsl(var(--primary)));
+  background-size: 100% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.timeline-dot {
+  @apply w-5 h-5 rounded-full absolute -left-[9px];
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  box-shadow: 0 0 0 4px hsl(var(--background)),
+              0 0 20px hsl(var(--primary) / 0.5),
+              0 0 40px hsl(var(--primary) / 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   EXPERIENCE CARD SPECIAL
+   ============================================ */
+.experience-card-current .glass {
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+/* ============================================
+   CANVAS OVERLAY
+   ============================================ */
 .canvas-overlay {
   position: fixed;
   top: 0;
@@ -208,7 +483,9 @@ body {
   z-index: -1;
 }
 
-/* Noise texture overlay */
+/* ============================================
+   NOISE TEXTURE
+   ============================================ */
 .noise::before {
   content: '';
   position: fixed;
@@ -216,8 +493,59 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.03;
+  opacity: 0.02;
   pointer-events: none;
   z-index: 1000;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   SECTION DIVIDERS
+   ============================================ */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    hsl(var(--primary) / 0.3),
+    hsl(var(--secondary) / 0.3),
+    hsl(var(--primary) / 0.3),
+    transparent);
+}
+
+/* ============================================
+   SKILL CARD ANIMATIONS
+   ============================================ */
+.skill-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) rotateX(5deg);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  .hover-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .btn-primary:hover,
+  .btn-outline:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

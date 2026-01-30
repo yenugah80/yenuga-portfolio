@@ -42,9 +42,12 @@ const config: Config = {
         'slide-in-left': 'slideInLeft 0.5s ease-out',
         'slide-in-right': 'slideInRight 0.5s ease-out',
         'glow': 'glow 2s ease-in-out infinite alternate',
-        'float': 'float 3s ease-in-out infinite',
-        'pulse-slow': 'pulse 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'text-shimmer': 'textShimmer 3s ease-in-out infinite',
+        'spin-slow': 'spin 30s linear infinite',
+        'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+        'gradient': 'gradientShift 4s ease infinite',
       },
       keyframes: {
         fadeIn: {
@@ -74,6 +77,15 @@ const config: Config = {
         textShimmer: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+        },
+        bounceSubtle: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        gradientShift: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '50%': { backgroundPosition: '100% 100%' },
+          '100%': { backgroundPosition: '0% 0%' },
         },
       },
       backgroundImage: {
